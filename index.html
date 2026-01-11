@@ -1,0 +1,256 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVP Consultants & Associates | Engineering Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        h1, h2, h3, .brand-font { font-family: 'Merriweather', serif; }
+        
+        .gold-accent { color: #C5A059; }
+        .bg-charcoal { background-color: #1A1A1A; }
+        .border-gold { border-color: #C5A059; }
+        
+        .hero-gradient {
+            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.8)), url('http://googleusercontent.com/image_collection/image_retrieval/6823742907424994400');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: #C5A059;
+        }
+
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #C5A059;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after { width: 100%; }
+        
+        .logo-box {
+            border: 2px solid #C5A059;
+            padding: 4px 12px;
+            display: inline-block;
+            letter-spacing: 2px;
+        }
+
+        /* PDF specific styling to ensure it looks good when exported */
+        @media print {
+            .no-print { display: none !important; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm no-print">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="logo-box font-bold text-xl brand-font">MVP</div>
+                <div class="hidden md:block text-[10px] leading-tight uppercase tracking-[0.2em] font-semibold text-gray-500">
+                    Consultants <br> & Associates
+                </div>
+            </div>
+            <div class="hidden lg:flex space-x-8 font-medium text-sm uppercase tracking-wider items-center">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#team" class="nav-link">Team</a>
+                <button onclick="downloadProfile()" class="flex items-center space-x-2 text-gold-accent hover:text-black transition-colors">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <span>Download Profile</span>
+                </button>
+                <a href="#contact" class="px-5 py-2 bg-charcoal text-white hover:bg-black transition-all">Get in Touch</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content Wrapper for PDF export -->
+    <div id="website-content">
+        <!-- Hero Section -->
+        <header id="home" class="hero-gradient h-screen flex items-center text-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl">
+                    <h2 class="text-gold-accent font-semibold tracking-[0.3em] uppercase mb-4 text-sm">Engineering Solutions Par Excellence</h2>
+                    <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-8">Building the Future of <span class="gold-accent">Uttarakhand.</span></h1>
+                    <p class="text-xl text-gray-300 mb-10 leading-relaxed font-light">
+                        Over 40 years of glorious engineering service in building, planning, and construction within the seismic zones and challenging terrains of the Kumaon region.
+                    </p>
+                    <div class="flex flex-wrap gap-4 no-print">
+                        <a href="#services" class="bg-charcoal border border-gold text-white px-8 py-4 font-bold hover:bg-gold-accent hover:text-charcoal transition-all">Our Expertise</a>
+                        <button onclick="downloadProfile()" class="bg-gold-accent text-charcoal px-8 py-4 font-bold hover:bg-white transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-download"></i> Download Profile (PDF)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/8625701020673583625" class="shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 rounded-sm" alt="Mountain Resort Project">
+                    </div>
+                    <div>
+                        <h2 class="text-4xl font-bold mb-6">Pioneering Hill Construction</h2>
+                        <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                            We are a specialized team of engineering professionals dedicated to building in the hills. Our expertise lies in the design of earthquake-resistant structures, taking care of delicate environment and ecological issues essential for the mountains.
+                        </p>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="border-l-4 border-gold pl-4">
+                                <h4 class="font-bold text-2xl">40+</h4>
+                                <p class="text-sm text-gray-500 uppercase tracking-widest">Years Experience</p>
+                            </div>
+                            <div class="border-l-4 border-gold pl-4">
+                                <h4 class="font-bold text-2xl">70+</h4>
+                                <p class="text-sm text-gray-500 uppercase tracking-widest">Resorts Designed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">Engineering Capabilities</h2>
+                    <p class="text-gray-500 max-w-xl mx-auto uppercase tracking-[0.2em] text-sm">Comprehensive technical solutions</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="service-card bg-white p-10 border border-gray-100 transition-all duration-300">
+                        <i class="fa-solid fa-compass-drafting text-4xl gold-accent mb-6"></i>
+                        <h3 class="text-xl font-bold mb-4">DPR & Planning</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Preparation of Detailed Project Reports and field surveys for residential, commercial, and micro hydel projects.</p>
+                    </div>
+                    <div class="service-card bg-white p-10 border border-gray-100 transition-all duration-300">
+                        <i class="fa-solid fa-mountain-sun text-4xl gold-accent mb-6"></i>
+                        <h3 class="text-xl font-bold mb-4">Earthquake Resistance</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Specialized design techniques for seismic zones and slopy sites, ensuring safety in mountain foundations.</p>
+                    </div>
+                    <div class="service-card bg-white p-10 border border-gray-100 transition-all duration-300">
+                        <i class="fa-solid fa-calculator text-4xl gold-accent mb-6"></i>
+                        <h3 class="text-xl font-bold mb-4">Asset Valuation</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Empanelled with banks and registered with Income Tax Dept under Wealth Tax Act for fixed asset valuations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" class="py-24 bg-charcoal text-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold mb-16 border-b border-gold/30 pb-4">Core Leadership</h2>
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div>
+                        <h3 class="text-2xl gold-accent mb-2">Mr. J.C. Belwal</h3>
+                        <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">Chief Executive</p>
+                        <p class="text-sm text-gray-400 leading-relaxed font-light">
+                            Expert in slopy sites and seismic zones. Former government engineer with 23 years in Uttarakhand. Specialized in bridge construction and stability of hillsides.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl gold-accent mb-2">Mrs. Namrata Arora</h3>
+                        <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">Architectural Lead</p>
+                        <p class="text-sm text-gray-400 leading-relaxed font-light">
+                            20+ years of experience in architecture and planning. Designed iconic hotels and residential buildings in Haldwani, Nainital, and Kausani.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl gold-accent mb-2">Dr. Ashok Sharma</h3>
+                        <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">Environmental Consultant</p>
+                        <p class="text-sm text-gray-400 leading-relaxed font-light">
+                            Former Member Secretary (HP Pollution Control Board). Expertise in identification and implementation of hydro-projects.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="bg-gray-50 grid md:grid-cols-2 shadow-2xl">
+                    <div class="p-12 lg:p-20">
+                        <h2 class="text-4xl font-bold mb-8">Get In Touch</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <i class="fa-solid fa-location-dot gold-accent text-xl"></i>
+                                <p class="text-gray-600">203, Tara Place, Nainital Road, Haldwani (Nainital)</p>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <i class="fa-solid fa-phone gold-accent text-xl"></i>
+                                <p class="text-gray-600">05946-222990 | +91 9997774711</p>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <i class="fa-solid fa-envelope gold-accent text-xl"></i>
+                                <p class="text-gray-600">info@mvpconsultantsandassociates.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-charcoal p-12 lg:p-20 text-white no-print">
+                        <h3 class="text-2xl font-bold mb-6">Join Our Team</h3>
+                        <p class="text-gray-400 mb-8">We are looking for expert surveyors, draughtsmen, and site supervisors. Send your resume to begin a promising future.</p>
+                        <a href="mailto:careers@mvpconsultantsandassociates.com" class="inline-block border-b-2 border-gold pb-1 font-bold tracking-widest hover:text-gold-accent transition-colors text-xs">
+                            CAREERS@MVPCONSULTANTS.COM
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-charcoal border-t border-white/5 no-print">
+        <div class="container mx-auto px-6 text-center">
+            <div class="logo-box font-bold text-xl brand-font text-white mb-4">MVP</div>
+            <p class="text-gray-500 text-xs tracking-widest">© 2024 MVP CONSULTANTS & ASSOCIATES. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+    <script>
+        function downloadProfile() {
+            const element = document.getElementById('website-content');
+            const opt = {
+                margin:       0.5,
+                filename:     'MVP_Consultants_Profile.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true },
+                jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+
+            // Add a temporary loading state
+            const btn = event.currentTarget;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Generating PDF...';
+            btn.disabled = true;
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }).catch(err => {
+                console.error('PDF Export Error:', err);
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            });
+        }
+    </script>
+</body>
+</html>
