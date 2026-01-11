@@ -2,19 +2,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MVP Consultants & Associates | Engineering Solutions</title>
+    <title>Mountain Valley Projects | MVP Consultants & Associates</title>
+    <!-- Dependencies: External Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
+        /* Base Styles & Typography */
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         h1, h2, h3, .brand-font { font-family: 'Merriweather', serif; }
         
+        /* Brand Colors & Accents */
         .gold-accent { color: #C5A059; }
         .bg-charcoal { background-color: #1A1A1A; }
         .border-gold { border-color: #C5A059; }
         
+        /* Hero Section Background */
         .hero-gradient {
             background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.8)), url('http://googleusercontent.com/image_collection/image_retrieval/6823742907424994400');
             background-size: cover;
@@ -22,10 +27,10 @@
             background-attachment: fixed;
         }
 
-        .service-card:hover {
+        /* Interactive Element Hover Effects */
+        .service-card:hover, .gallery-item:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border-color: #C5A059;
         }
 
         .nav-link { position: relative; }
@@ -41,6 +46,7 @@
         }
         .nav-link:hover::after { width: 100%; }
         
+        /* Logo Framing */
         .logo-box {
             border: 2px solid #C5A059;
             padding: 4px 12px;
@@ -48,7 +54,15 @@
             letter-spacing: 2px;
         }
 
-        /* PDF specific styling to ensure it looks good when exported */
+        /* Form Interaction Focus */
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #C5A059;
+            ring: 1px;
+            ring-color: #C5A059;
+        }
+
+        /* Print Optimization (for PDF Download) */
         @media print {
             .no-print { display: none !important; }
         }
@@ -56,39 +70,40 @@
 </head>
 <body class="bg-gray-50 text-gray-900">
 
-    <!-- Navigation -->
+    <!-- Navigation Header -->
     <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm no-print">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-2">
                 <div class="logo-box font-bold text-xl brand-font">MVP</div>
                 <div class="hidden md:block text-[10px] leading-tight uppercase tracking-[0.2em] font-semibold text-gray-500">
-                    Consultants <br> & Associates
+                    Mountain Valley Projects <br> & Associates
                 </div>
             </div>
+            <!-- Main Navigation Menu -->
             <div class="hidden lg:flex space-x-8 font-medium text-sm uppercase tracking-wider items-center">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About Us</a>
                 <a href="#services" class="nav-link">Services</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
                 <a href="#team" class="nav-link">Team</a>
                 <button onclick="downloadProfile()" class="flex items-center space-x-2 text-gold-accent hover:text-black transition-colors">
                     <i class="fa-solid fa-file-pdf"></i>
                     <span>Download Profile</span>
                 </button>
-                <a href="#contact" class="px-5 py-2 bg-charcoal text-white hover:bg-black transition-all">Get in Touch</a>
+                <a href="#contact" class="px-5 py-2 bg-charcoal text-white hover:bg-black transition-all">Contact Us</a>
             </div>
         </div>
     </nav>
 
-    <!-- Content Wrapper for PDF export -->
     <div id="website-content">
-        <!-- Hero Section -->
+        <!-- Hero (Intro) Section -->
         <header id="home" class="hero-gradient h-screen flex items-center text-white">
             <div class="container mx-auto px-6">
                 <div class="max-w-3xl">
-                    <h2 class="text-gold-accent font-semibold tracking-[0.3em] uppercase mb-4 text-sm">Engineering Solutions Par Excellence</h2>
+                    <h2 class="text-gold-accent font-semibold tracking-[0.3em] uppercase mb-4 text-sm">Mountain Valley Projects</h2>
                     <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-8">Building the Future of <span class="gold-accent">Uttarakhand.</span></h1>
                     <p class="text-xl text-gray-300 mb-10 leading-relaxed font-light">
-                        Over 40 years of glorious engineering service in building, planning, and construction within the seismic zones and challenging terrains of the Kumaon region.
+                        MVP Consultants (Mountain Valley Projects) brings over 40 years of glorious engineering service in building, planning, and construction within the seismic zones of the Kumaon region.
                     </p>
                     <div class="flex flex-wrap gap-4 no-print">
                         <a href="#services" class="bg-charcoal border border-gold text-white px-8 py-4 font-bold hover:bg-gold-accent hover:text-charcoal transition-all">Our Expertise</a>
@@ -100,7 +115,7 @@
             </div>
         </header>
 
-        <!-- About Section -->
+        <!-- About (Mission & Vision) Section -->
         <section id="about" class="py-24 bg-white">
             <div class="container mx-auto px-6">
                 <div class="grid md:grid-cols-2 gap-16 items-center">
@@ -108,9 +123,10 @@
                         <img src="http://googleusercontent.com/image_collection/image_retrieval/8625701020673583625" class="shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 rounded-sm" alt="Mountain Resort Project">
                     </div>
                     <div>
+                        <h2 class="text-4xl font-bold mb-6 italic text-gray-400 brand-font">Mountain Valley Projects</h2>
                         <h2 class="text-4xl font-bold mb-6">Pioneering Hill Construction</h2>
                         <p class="text-gray-600 text-lg mb-6 leading-relaxed">
-                            We are a specialized team of engineering professionals dedicated to building in the hills. Our expertise lies in the design of earthquake-resistant structures, taking care of delicate environment and ecological issues essential for the mountains.
+                            We are a specialized team of engineering professionals at Mountain Valley Projects dedicated to building in the hills. Our expertise lies in the design of earthquake-resistant structures, taking care of delicate environment and ecological issues essential for the mountains.
                         </p>
                         <div class="grid grid-cols-2 gap-6">
                             <div class="border-l-4 border-gold pl-4">
@@ -127,18 +143,18 @@
             </div>
         </section>
 
-        <!-- Services Section -->
+        <!-- Services (Capabilities) Section -->
         <section id="services" class="py-24 bg-gray-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold mb-4">Engineering Capabilities</h2>
-                    <p class="text-gray-500 max-w-xl mx-auto uppercase tracking-[0.2em] text-sm">Comprehensive technical solutions</p>
+                    <p class="text-gray-500 max-w-xl mx-auto uppercase tracking-[0.2em] text-sm">Technical excellence by Mountain Valley Projects</p>
                 </div>
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="service-card bg-white p-10 border border-gray-100 transition-all duration-300">
                         <i class="fa-solid fa-compass-drafting text-4xl gold-accent mb-6"></i>
                         <h3 class="text-xl font-bold mb-4">DPR & Planning</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">Preparation of Detailed Project Reports and field surveys for residential, commercial, and micro hydel projects.</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">Mountain Valley Projects specializes in field surveys and project reports for residential, commercial, and micro hydel projects.</p>
                     </div>
                     <div class="service-card bg-white p-10 border border-gray-100 transition-all duration-300">
                         <i class="fa-solid fa-mountain-sun text-4xl gold-accent mb-6"></i>
@@ -148,20 +164,53 @@
                     <div class="service-card bg-white p-10 border border-gray-100 transition-all duration-300">
                         <i class="fa-solid fa-calculator text-4xl gold-accent mb-6"></i>
                         <h3 class="text-xl font-bold mb-4">Asset Valuation</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">Empanelled with banks and registered with Income Tax Dept under Wealth Tax Act for fixed asset valuations.</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">MVP is empanelled with banks and registered with Income Tax Dept under Wealth Tax Act for fixed asset valuations.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Team Section -->
+        <!-- Gallery (Portfolio) Section -->
+        <section id="gallery" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">Project Gallery</h2>
+                    <p class="text-gray-500 max-w-xl mx-auto uppercase tracking-[0.2em] text-sm">A Showcase of Hillside Architecture</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="gallery-item overflow-hidden bg-gray-100 transition-all duration-500 rounded-sm">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/10335025911337242284" class="w-full h-64 object-cover" alt="Luxury Hill Resort">
+                        <div class="p-4 bg-white border-t border-gray-100">
+                            <h4 class="font-bold">Luxury Resort - Nainital</h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Hospitality Project</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item overflow-hidden bg-gray-100 transition-all duration-500 rounded-sm">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/590660921572233737" class="w-full h-64 object-cover" alt="Residential Villa">
+                        <div class="p-4 bg-white border-t border-gray-100">
+                            <h4 class="font-bold">Private Villa - Kausani</h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Residential Architecture</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item overflow-hidden bg-gray-100 transition-all duration-500 rounded-sm">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/4217648856255873671" class="w-full h-64 object-cover" alt="Group Housing">
+                        <div class="p-4 bg-white border-t border-gray-100">
+                            <h4 class="font-bold">Premium Housing - Haldwani</h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Group Housing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team (Leadership) Section -->
         <section id="team" class="py-24 bg-charcoal text-white">
             <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold mb-16 border-b border-gold/30 pb-4">Core Leadership</h2>
+                <h2 class="text-4xl font-bold mb-16 border-b border-gold/30 pb-4">MVP Leadership</h2>
                 <div class="grid md:grid-cols-3 gap-12">
                     <div>
                         <h3 class="text-2xl gold-accent mb-2">Mr. J.C. Belwal</h3>
-                        <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">Chief Executive</p>
+                        <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">Chief Executive, Mountain Valley Projects</p>
                         <p class="text-sm text-gray-400 leading-relaxed font-light">
                             Expert in slopy sites and seismic zones. Former government engineer with 23 years in Uttarakhand. Specialized in bridge construction and stability of hillsides.
                         </p>
@@ -184,59 +233,99 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Contact (Lead Generation) Section -->
         <section id="contact" class="py-24 bg-white">
             <div class="container mx-auto px-6">
-                <div class="bg-gray-50 grid md:grid-cols-2 shadow-2xl">
-                    <div class="p-12 lg:p-20">
-                        <h2 class="text-4xl font-bold mb-8">Get In Touch</h2>
-                        <div class="space-y-6">
-                            <div class="flex items-center space-x-4">
-                                <i class="fa-solid fa-location-dot gold-accent text-xl"></i>
-                                <p class="text-gray-600">203, Tara Place, Nainital Road, Haldwani (Nainital)</p>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <i class="fa-solid fa-phone gold-accent text-xl"></i>
-                                <p class="text-gray-600">05946-222990 | +91 9997774711</p>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <i class="fa-solid fa-envelope gold-accent text-xl"></i>
-                                <p class="text-gray-600">info@mvpconsultantsandassociates.com</p>
+                <div class="text-center mb-16 no-print">
+                    <h2 class="text-4xl font-bold mb-4">Contact Us</h2>
+                    <p class="text-gray-500 max-w-xl mx-auto uppercase tracking-[0.2em] text-sm">Ready to start your mountain project?</p>
+                </div>
+                
+                <div class="grid lg:grid-cols-3 gap-12 shadow-2xl bg-white overflow-hidden rounded-sm">
+                    <!-- Contact Details Info Column -->
+                    <div class="bg-charcoal p-12 text-white flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-8">Contact Info</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start space-x-4">
+                                    <i class="fa-solid fa-location-dot gold-accent text-xl mt-1"></i>
+                                    <p class="text-gray-300 text-sm">203, Tara Place, Nainital Road, Haldwani (Nainital), Uttarakhand</p>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <i class="fa-solid fa-phone gold-accent text-xl"></i>
+                                    <p class="text-gray-300 text-sm">05946-222990 | +91 9997774711</p>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <i class="fa-solid fa-envelope gold-accent text-xl"></i>
+                                    <p class="text-gray-300 text-sm">info@mountainvalleyprojects.com</p>
+                                </div>
                             </div>
                         </div>
+                        <!-- Secondary Call to Action -->
+                        <div class="mt-12 pt-12 border-t border-white/10 no-print">
+                            <h4 class="font-bold mb-4 text-gold-accent uppercase text-xs tracking-widest">Join Our Team</h4>
+                            <p class="text-xs text-gray-400 leading-relaxed mb-4">Looking for expert surveyors and draughtsmen.</p>
+                            <a href="mailto:careers@mountainvalleyprojects.com" class="text-xs font-bold border-b border-gold hover:text-gold-accent transition-colors">Apply Now</a>
+                        </div>
                     </div>
-                    <div class="bg-charcoal p-12 lg:p-20 text-white no-print">
-                        <h3 class="text-2xl font-bold mb-6">Join Our Team</h3>
-                        <p class="text-gray-400 mb-8">We are looking for expert surveyors, draughtsmen, and site supervisors. Send your resume to begin a promising future.</p>
-                        <a href="mailto:careers@mvpconsultantsandassociates.com" class="inline-block border-b-2 border-gold pb-1 font-bold tracking-widest hover:text-gold-accent transition-colors text-xs">
-                            CAREERS@MVPCONSULTANTS.COM
-                        </a>
+
+                    <!-- Workable Lead Form (using Formspree Endpoint) -->
+                    <div class="lg:col-span-2 p-12 bg-gray-50 no-print">
+                        <form action="https://formspree.io/f/xoqogndy" method="POST" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Full Name</label>
+                                    <input type="text" name="name" required class="w-full bg-white border border-gray-200 p-4 text-sm rounded-sm" placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Mobile Number</label>
+                                    <input type="tel" name="phone" required class="w-full bg-white border border-gray-200 p-4 text-sm rounded-sm" placeholder="+91 00000 00000">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Subject</label>
+                                <input type="text" name="_subject" required class="w-full bg-white border border-gray-200 p-4 text-sm rounded-sm" placeholder="Project Inquiry">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Message</label>
+                                <textarea name="message" rows="6" required class="w-full bg-white border border-gray-200 p-4 text-sm rounded-sm" placeholder="Tell us about your project requirements..."></textarea>
+                            </div>
+                            <!-- Formspree hidden fields for better processing -->
+                            <input type="hidden" name="_next" value="#contact">
+                            <button type="submit" class="w-full md:w-auto px-12 py-4 bg-charcoal text-white font-bold hover:bg-gold-accent hover:text-charcoal transition-all uppercase tracking-widest text-sm">
+                                Send Message
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- Footer -->
+    <!-- Final Footer Section -->
     <footer class="py-12 bg-charcoal border-t border-white/5 no-print">
         <div class="container mx-auto px-6 text-center">
-            <div class="logo-box font-bold text-xl brand-font text-white mb-4">MVP</div>
-            <p class="text-gray-500 text-xs tracking-widest">© 2024 MVP CONSULTANTS & ASSOCIATES. ALL RIGHTS RESERVED.</p>
+            <div class="logo-box font-bold text-xl brand-font text-white mb-2">MVP</div>
+            <p class="text-gray-400 text-[10px] tracking-[0.3em] uppercase mb-4">Mountain Valley Projects</p>
+            <p class="text-gray-500 text-xs tracking-widest">© 2024 MOUNTAIN VALLEY PROJECTS & ASSOCIATES. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
 
     <script>
+        /**
+         * Function to generate and download the Company Profile as a PDF.
+         * Uses html2pdf.js to convert the main content div into a formatted document.
+         */
         function downloadProfile() {
             const element = document.getElementById('website-content');
             const opt = {
                 margin:       0.5,
-                filename:     'MVP_Consultants_Profile.pdf',
+                filename:     'Mountain_Valley_Projects_Profile.pdf',
                 image:        { type: 'jpeg', quality: 0.98 },
                 html2canvas:  { scale: 2, useCORS: true },
                 jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
             };
 
-            // Add a temporary loading state
             const btn = event.currentTarget;
             const originalText = btn.innerHTML;
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Generating PDF...';
@@ -249,8 +338,3 @@
                 console.error('PDF Export Error:', err);
                 btn.innerHTML = originalText;
                 btn.disabled = false;
-            });
-        }
-    </script>
-</body>
-</html>
